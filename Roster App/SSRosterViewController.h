@@ -1,5 +1,5 @@
 //
-//  SSViewController.h
+//  SSRosterViewController.h
 //  Roster App
 //
 //  Created by Stevenson on 1/13/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SSViewController : UIViewController
+@interface SSRosterViewController : UIViewController
 
 @end

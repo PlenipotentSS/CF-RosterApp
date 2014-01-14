@@ -10,7 +10,6 @@
 
 @interface SSDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *instructorLabel;
 
 @end
 
@@ -33,9 +32,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.nameLabel.text = self.name;
-    self.instructorLabel.text = self.instructor;
+    self.nameLabel.text = [self.student name];
 }
 
 - (void)didReceiveMemoryWarning

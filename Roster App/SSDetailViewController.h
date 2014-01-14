@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSStudentObject.h"
 
 @interface SSDetailViewController : UIViewController
-@property (strong,nonatomic) NSString *name;
-@property (strong,nonatomic) NSString *instructor;
-@property (weak, nonatomic) IBOutlet UIImageView *portraitView;
+@property (strong,nonatomic) SSStudentObject *student;
 
 @end
