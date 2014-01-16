@@ -22,21 +22,7 @@
 		D2428496188486C500980E4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2428494188486C500980E4E /* InfoPlist.strings */; };
 		D2428498188486C500980E4E /* Roster_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428497188486C500980E4E /* Roster_AppTests.m */; };
 		D24284A31884873700980E4E /* SSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24284A21884873700980E4E /* SSDetailViewController.m */; };
-		D2AEF5171884B9640055AA5D /* SSStudentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5161884B9640055AA5D /* SSStudentObject.m */; };
-		D2AEF51D1885B50A0055AA5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
-		D2AEF51E1885B50A0055AA5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846E188486C500980E4E /* CoreGraphics.framework */; };
-		D2AEF51F1885B50A0055AA5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
-		D2AEF5251885B50A0055AA5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5231885B50A0055AA5D /* InfoPlist.strings */; };
-		D2AEF5271885B50A0055AA5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5261885B50A0055AA5D /* main.m */; };
-		D2AEF52B1885B50A0055AA5D /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF52A1885B50A0055AA5D /* SSAppDelegate.m */; };
-		D2AEF52E1885B50A0055AA5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF52C1885B50A0055AA5D /* Main.storyboard */; };
-		D2AEF5311885B50A0055AA5D /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5301885B50A0055AA5D /* SSViewController.m */; };
-		D2AEF5331885B50A0055AA5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5321885B50A0055AA5D /* Images.xcassets */; };
-		D2AEF5391885B50A0055AA5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242848B188486C500980E4E /* XCTest.framework */; };
-		D2AEF53A1885B50A0055AA5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
-		D2AEF53B1885B50A0055AA5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
-		D2AEF5431885B50A0055AA5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5411885B50A0055AA5D /* InfoPlist.strings */; };
-		D2AEF5451885B50A0055AA5D /* FibonacciTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5441885B50A0055AA5D /* FibonacciTests.m */; };
+		D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5161884B9640055AA5D /* SSStudent.m */; };
 		D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */; };
 		D2AEF5DE1885E0B80055AA5D /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */; };
 /* End PBXBuildFile section */
@@ -48,13 +34,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2428468188486C500980E4E;
 			remoteInfo = "Roster App";
-		};
-		D2AEF53C1885B50A0055AA5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D2428461188486C500980E4E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AEF51B1885B50A0055AA5D;
-			remoteInfo = Fibonacci;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -80,9 +59,8 @@
 		D2428497188486C500980E4E /* Roster_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roster_AppTests.m; sourceTree = "<group>"; };
 		D24284A11884873700980E4E /* SSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailViewController.h; sourceTree = "<group>"; };
 		D24284A21884873700980E4E /* SSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailViewController.m; sourceTree = "<group>"; };
-		D2AEF5151884B9640055AA5D /* SSStudentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStudentObject.h; sourceTree = "<group>"; };
-		D2AEF5161884B9640055AA5D /* SSStudentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStudentObject.m; sourceTree = "<group>"; };
-		D2AEF51C1885B50A0055AA5D /* Fibonacci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fibonacci.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AEF5151884B9640055AA5D /* SSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStudent.h; sourceTree = "<group>"; };
+		D2AEF5161884B9640055AA5D /* SSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStudent.m; sourceTree = "<group>"; };
 		D2AEF5221885B50A0055AA5D /* Fibonacci-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fibonacci-Info.plist"; sourceTree = "<group>"; };
 		D2AEF5241885B50A0055AA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2AEF5261885B50A0055AA5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,7 +71,6 @@
 		D2AEF52F1885B50A0055AA5D /* SSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
 		D2AEF5301885B50A0055AA5D /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
 		D2AEF5321885B50A0055AA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D2AEF5381885B50A0055AA5D /* FibonacciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FibonacciTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AEF5401885B50A0055AA5D /* FibonacciTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FibonacciTests-Info.plist"; sourceTree = "<group>"; };
 		D2AEF5421885B50A0055AA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2AEF5441885B50A0055AA5D /* FibonacciTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FibonacciTests.m; sourceTree = "<group>"; };
@@ -123,26 +100,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2AEF5191885B50A0055AA5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF51E1885B50A0055AA5D /* CoreGraphics.framework in Frameworks */,
-				D2AEF51F1885B50A0055AA5D /* UIKit.framework in Frameworks */,
-				D2AEF51D1885B50A0055AA5D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2AEF5351885B50A0055AA5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF5391885B50A0055AA5D /* XCTest.framework in Frameworks */,
-				D2AEF53B1885B50A0055AA5D /* UIKit.framework in Frameworks */,
-				D2AEF53A1885B50A0055AA5D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -163,8 +120,6 @@
 			children = (
 				D2428469188486C500980E4E /* Roster App.app */,
 				D242848A188486C500980E4E /* Roster AppTests.xctest */,
-				D2AEF51C1885B50A0055AA5D /* Fibonacci.app */,
-				D2AEF5381885B50A0055AA5D /* FibonacciTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,8 +141,8 @@
 				D242847B188486C500980E4E /* SSAppDelegate.h */,
 				D242847C188486C500980E4E /* SSAppDelegate.m */,
 				D242847E188486C500980E4E /* Main.storyboard */,
-				D2AEF5151884B9640055AA5D /* SSStudentObject.h */,
-				D2AEF5161884B9640055AA5D /* SSStudentObject.m */,
+				D2AEF5151884B9640055AA5D /* SSStudent.h */,
+				D2AEF5161884B9640055AA5D /* SSStudent.m */,
 				D24284A11884873700980E4E /* SSDetailViewController.h */,
 				D24284A21884873700980E4E /* SSDetailViewController.m */,
 				D2428481188486C500980E4E /* SSRosterViewController.h */,
@@ -311,41 +266,6 @@
 			productReference = D242848A188486C500980E4E /* Roster AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D2AEF51B1885B50A0055AA5D /* Fibonacci */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D2AEF54A1885B50A0055AA5D /* Build configuration list for PBXNativeTarget "Fibonacci" */;
-			buildPhases = (
-				D2AEF5181885B50A0055AA5D /* Sources */,
-				D2AEF5191885B50A0055AA5D /* Frameworks */,
-				D2AEF51A1885B50A0055AA5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Fibonacci;
-			productName = Fibonacci;
-			productReference = D2AEF51C1885B50A0055AA5D /* Fibonacci.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D2AEF5371885B50A0055AA5D /* FibonacciTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D2AEF54B1885B50A0055AA5D /* Build configuration list for PBXNativeTarget "FibonacciTests" */;
-			buildPhases = (
-				D2AEF5341885B50A0055AA5D /* Sources */,
-				D2AEF5351885B50A0055AA5D /* Frameworks */,
-				D2AEF5361885B50A0055AA5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D2AEF53D1885B50A0055AA5D /* PBXTargetDependency */,
-			);
-			name = FibonacciTests;
-			productName = FibonacciTests;
-			productReference = D2AEF5381885B50A0055AA5D /* FibonacciTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -357,9 +277,6 @@
 				ORGANIZATIONNAME = "Steven Stevenson";
 				TargetAttributes = {
 					D2428489188486C500980E4E = {
-						TestTargetID = D2428468188486C500980E4E;
-					};
-					D2AEF5371885B50A0055AA5D = {
 						TestTargetID = D2428468188486C500980E4E;
 					};
 				};
@@ -379,8 +296,6 @@
 			targets = (
 				D2428468188486C500980E4E /* Roster App */,
 				D2428489188486C500980E4E /* Roster AppTests */,
-				D2AEF51B1885B50A0055AA5D /* Fibonacci */,
-				D2AEF5371885B50A0055AA5D /* FibonacciTests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,24 +320,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2AEF51A1885B50A0055AA5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF5331885B50A0055AA5D /* Images.xcassets in Resources */,
-				D2AEF5251885B50A0055AA5D /* InfoPlist.strings in Resources */,
-				D2AEF52E1885B50A0055AA5D /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2AEF5361885B50A0055AA5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF5431885B50A0055AA5D /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,7 +329,7 @@
 			files = (
 				D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */,
 				D2428483188486C500980E4E /* SSRosterViewController.m in Sources */,
-				D2AEF5171884B9640055AA5D /* SSStudentObject.m in Sources */,
+				D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */,
 				D242847D188486C500980E4E /* SSAppDelegate.m in Sources */,
 				D24284A31884873700980E4E /* SSDetailViewController.m in Sources */,
 				D2428479188486C500980E4E /* main.m in Sources */,
@@ -447,24 +344,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2AEF5181885B50A0055AA5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF5311885B50A0055AA5D /* SSViewController.m in Sources */,
-				D2AEF52B1885B50A0055AA5D /* SSAppDelegate.m in Sources */,
-				D2AEF5271885B50A0055AA5D /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2AEF5341885B50A0055AA5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AEF5451885B50A0055AA5D /* FibonacciTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -472,11 +351,6 @@
 			isa = PBXTargetDependency;
 			target = D2428468188486C500980E4E /* Roster App */;
 			targetProxy = D242848F188486C500980E4E /* PBXContainerItemProxy */;
-		};
-		D2AEF53D1885B50A0055AA5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2AEF51B1885B50A0055AA5D /* Fibonacci */;
-			targetProxy = D2AEF53C1885B50A0055AA5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -611,6 +485,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roster App/Roster App-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Roster App/Roster App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -624,6 +499,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roster App/Roster App-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Roster App/Roster App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -672,80 +548,6 @@
 			};
 			name = Release;
 		};
-		D2AEF5461885B50A0055AA5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fibonacci/Fibonacci-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Fibonacci/Fibonacci-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		D2AEF5471885B50A0055AA5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fibonacci/Fibonacci-Prefix.pch";
-				INFOPLIST_FILE = "Fibonacci/Fibonacci-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		D2AEF5481885B50A0055AA5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roster App.app/Roster App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fibonacci/Fibonacci-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "FibonacciTests/FibonacciTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		D2AEF5491885B50A0055AA5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roster App.app/Roster App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Fibonacci/Fibonacci-Prefix.pch";
-				INFOPLIST_FILE = "FibonacciTests/FibonacciTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -772,24 +574,6 @@
 			buildConfigurations = (
 				D242849F188486C500980E4E /* Debug */,
 				D24284A0188486C500980E4E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D2AEF54A1885B50A0055AA5D /* Build configuration list for PBXNativeTarget "Fibonacci" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2AEF5461885B50A0055AA5D /* Debug */,
-				D2AEF5471885B50A0055AA5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D2AEF54B1885B50A0055AA5D /* Build configuration list for PBXNativeTarget "FibonacciTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2AEF5481885B50A0055AA5D /* Debug */,
-				D2AEF5491885B50A0055AA5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

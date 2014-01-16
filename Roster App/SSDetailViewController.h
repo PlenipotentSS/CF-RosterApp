@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SSStudentObject.h"
+#import "SSStudent.h"
+
+@protocol SSDetailViewDelegate <NSObject>
+
+-(void) sendStudentObject: (SSStudent*) student;
+
+@end
 
 @interface SSDetailViewController : UIViewController
-@property (strong,nonatomic) SSStudentObject *student;
+@property (strong,nonatomic) SSStudent *student;
+@property (unsafe_unretained) id<SSDetailViewDelegate> delegate;
 
 @end

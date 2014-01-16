@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SSStudentObject.h"
+#import "SSStudent.h"
 
 
 @interface SSRosterModelController : NSObject <UITableViewDataSource>
 
--(SSStudentObject*) getStudentAtIndex: (NSInteger) index;
+-(SSStudent*) getStudentAtIndex: (NSInteger) index;
+-(NSArray*) getStudentData;
+
 -(void) sortByName;
 -(void) sortByGitHub;
-
+-(void) archiveBootCamp;
 @end

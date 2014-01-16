@@ -9,10 +9,10 @@
 #import "SSRosterViewController.h"
 #import "SSRosterModelController.h"
 #import "SSDetailViewController.h"
-#import "SSStudentObject.h"
+#import "SSStudent.h"
 
 
-@interface SSRosterViewController () <UITableViewDelegate,UIActionSheetDelegate>
+@interface SSRosterViewController () <UITableViewDelegate, UIActionSheetDelegate,SSDetailViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *theTableView;
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
@@ -42,6 +42,9 @@
     [super viewDidAppear:animated];
     UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleBordered target:self action:@selector(showActionSheet)];
     self.navigationItem.rightBarButtonItem = sortButton;
+    
+    [self.rosterMC archiveBootCamp];
+    [self.theTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,11 +91,19 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toDetail"]) {
         NSIndexPath *indexPath = [self.theTableView indexPathForSelectedRow];
-        SSStudentObject *student = [self.rosterMC
-                                    getStudentAtIndex: indexPath.row];
-        [(SSDetailViewController*)segue.destinationViewController setStudent:student];
+        SSStudent *student = [self.rosterMC getStudentAtIndex: indexPath.row];
+        SSDetailViewController *detailView = (SSDetailViewController*)segue.destinationViewController;
+        [detailView setStudent:student];
+        detailView.delegate = self;
         [self.theTableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+}
+
+#pragma mark SSDetailViewDelegate
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void) sendStudentObject: (SSStudent*) student {
+    NSIndexPath *pathToThisStudent = [NSIndexPath indexPathForRow:[[self.rosterMC getStudentData] indexOfObject:student] inSection:0];
+    [self.theTableView reloadRowsAtIndexPaths:@[pathToThisStudent] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 @end

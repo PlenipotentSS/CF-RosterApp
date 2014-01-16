@@ -1,5 +1,5 @@
 //
-//  SSStudentObject.h
+//  SSStudent.h
 //  Roster App
 //
 //  Created by Stevenson on 1/13/14.
@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SSStudentObject : NSObject <NSCoding>
+@interface SSStudent : NSObject <NSCoding>
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *image;
 @property (nonatomic) NSString *twitter;
 @property (nonatomic) NSString *gitHub;
+@property (nonatomic) NSArray *RGB;
 
 -(instancetype) initWithName: (NSString*) name
                     andImage: (NSString*) image
