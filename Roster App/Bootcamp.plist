@@ -31,6 +31,8 @@
 		<string></string>
 		<key>github</key>
 		<string></string>
+		<key>instructor</key>
+		<string>iOS</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -61,6 +63,8 @@
 		<string></string>
 		<key>github</key>
 		<string></string>
+		<key>instructor</key>
+		<string>Rails</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -71,6 +75,8 @@
 		<string></string>
 		<key>github</key>
 		<string></string>
+		<key>instructor</key>
+		<string>iOS</string>
 	</dict>
 	<dict>
 		<key>name</key>

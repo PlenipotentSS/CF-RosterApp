@@ -12,6 +12,8 @@
 
 @interface SSRosterModelController : NSObject <UITableViewDataSource>
 
+
+
 -(SSStudent*) getStudentAtIndex: (NSInteger) index;
 -(NSArray*) getStudentData;
 

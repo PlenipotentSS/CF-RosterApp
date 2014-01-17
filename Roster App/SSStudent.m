@@ -17,7 +17,8 @@
 -(instancetype) initWithName: (NSString*) name
                     andImage: (NSString*) image
                   andTwitter: (NSString*) twitter
-                   andGitHub: github {
+                   andGitHub: github
+                isInstructor: (NSString*) yesNo{
     self = [super self];
     if (self) {
         _name = name;
@@ -25,6 +26,7 @@
         _twitter = twitter;
         _gitHub = github;
         _RGB = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:1],[NSNumber numberWithFloat:1],[NSNumber numberWithFloat:1], nil];
+        _isInstructor = yesNo;
     }
     return self;
 }
@@ -36,6 +38,7 @@
     _gitHub = [aDecoder decodeObjectForKey:@"github"];
     _twitter = [aDecoder decodeObjectForKey:@"twitter"];
     _RGB = [aDecoder decodeObjectForKey:@"RGB"];
+    _isInstructor = [aDecoder decodeObjectForKey:@"isInstructor"];
     
     return self;
 }
@@ -46,6 +49,7 @@
     [aCoder encodeObject:self.gitHub forKey:@"github"];
     [aCoder encodeObject:self.twitter forKey:@"twitter"];
     [aCoder encodeObject:self.RGB forKey:@"RGB"];
+    [aCoder encodeObject:self.isInstructor forKey:@"isInstructor"];
 }
 
 @end

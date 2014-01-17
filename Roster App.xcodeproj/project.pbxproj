@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82931749CAF243E5857FDA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C23AD66AD864442DA125BE07 /* libPods.a */; };
 		D242846D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
 		D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846E188486C500980E4E /* CoreGraphics.framework */; };
 		D2428471188486C500980E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
@@ -22,6 +23,9 @@
 		D2428496188486C500980E4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2428494188486C500980E4E /* InfoPlist.strings */; };
 		D2428498188486C500980E4E /* Roster_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428497188486C500980E4E /* Roster_AppTests.m */; };
 		D24284A31884873700980E4E /* SSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24284A21884873700980E4E /* SSDetailViewController.m */; };
+		D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */; };
+		D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAD188853A8000D349A /* SSDetailModelController.m */; };
+		D2A86EF21888947D000D349A /* SSDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EF11888947D000D349A /* SSDetailScrollView.m */; };
 		D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5161884B9640055AA5D /* SSStudent.m */; };
 		D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */; };
 		D2AEF5DE1885E0B80055AA5D /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */; };
@@ -38,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70995428ED394811ACBC63C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C23AD66AD864442DA125BE07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2428469188486C500980E4E /* Roster App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roster App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D242846C188486C500980E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D242846E188486C500980E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,21 +65,14 @@
 		D2428497188486C500980E4E /* Roster_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roster_AppTests.m; sourceTree = "<group>"; };
 		D24284A11884873700980E4E /* SSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailViewController.h; sourceTree = "<group>"; };
 		D24284A21884873700980E4E /* SSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailViewController.m; sourceTree = "<group>"; };
+		D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRosterTableViewCell.h; sourceTree = "<group>"; };
+		D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRosterTableViewCell.m; sourceTree = "<group>"; };
+		D2A86EAC188853A8000D349A /* SSDetailModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailModelController.h; sourceTree = "<group>"; };
+		D2A86EAD188853A8000D349A /* SSDetailModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailModelController.m; sourceTree = "<group>"; };
+		D2A86EF01888947D000D349A /* SSDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailScrollView.h; sourceTree = "<group>"; };
+		D2A86EF11888947D000D349A /* SSDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailScrollView.m; sourceTree = "<group>"; };
 		D2AEF5151884B9640055AA5D /* SSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStudent.h; sourceTree = "<group>"; };
 		D2AEF5161884B9640055AA5D /* SSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStudent.m; sourceTree = "<group>"; };
-		D2AEF5221885B50A0055AA5D /* Fibonacci-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fibonacci-Info.plist"; sourceTree = "<group>"; };
-		D2AEF5241885B50A0055AA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D2AEF5261885B50A0055AA5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2AEF5281885B50A0055AA5D /* Fibonacci-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fibonacci-Prefix.pch"; sourceTree = "<group>"; };
-		D2AEF5291885B50A0055AA5D /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
-		D2AEF52A1885B50A0055AA5D /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
-		D2AEF52D1885B50A0055AA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D2AEF52F1885B50A0055AA5D /* SSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
-		D2AEF5301885B50A0055AA5D /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
-		D2AEF5321885B50A0055AA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D2AEF5401885B50A0055AA5D /* FibonacciTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FibonacciTests-Info.plist"; sourceTree = "<group>"; };
-		D2AEF5421885B50A0055AA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D2AEF5441885B50A0055AA5D /* FibonacciTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FibonacciTests.m; sourceTree = "<group>"; };
 		D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRosterModelController.h; sourceTree = "<group>"; };
 		D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRosterModelController.m; sourceTree = "<group>"; };
 		D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bootcamp.plist; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 				D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */,
 				D2428471188486C500980E4E /* UIKit.framework in Frameworks */,
 				D242846D188486C500980E4E /* Foundation.framework in Frameworks */,
+				82931749CAF243E5857FDA0C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,10 +108,9 @@
 			children = (
 				D2428472188486C500980E4E /* Roster App */,
 				D2428491188486C500980E4E /* Roster AppTests */,
-				D2AEF5201885B50A0055AA5D /* Fibonacci */,
-				D2AEF53E1885B50A0055AA5D /* FibonacciTests */,
 				D242846B188486C500980E4E /* Frameworks */,
 				D242846A188486C500980E4E /* Products */,
+				70995428ED394811ACBC63C1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +130,7 @@
 				D242846E188486C500980E4E /* CoreGraphics.framework */,
 				D2428470188486C500980E4E /* UIKit.framework */,
 				D242848B188486C500980E4E /* XCTest.framework */,
+				C23AD66AD864442DA125BE07 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,14 +141,9 @@
 				D242847B188486C500980E4E /* SSAppDelegate.h */,
 				D242847C188486C500980E4E /* SSAppDelegate.m */,
 				D242847E188486C500980E4E /* Main.storyboard */,
-				D2AEF5151884B9640055AA5D /* SSStudent.h */,
-				D2AEF5161884B9640055AA5D /* SSStudent.m */,
-				D24284A11884873700980E4E /* SSDetailViewController.h */,
-				D24284A21884873700980E4E /* SSDetailViewController.m */,
-				D2428481188486C500980E4E /* SSRosterViewController.h */,
-				D2428482188486C500980E4E /* SSRosterViewController.m */,
-				D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */,
-				D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */,
+				D2A86EA718884C6C000D349A /* Model */,
+				D2A86EA818884C74000D349A /* Controller */,
+				D2A86EA618884C5F000D349A /* Data */,
 				D2428484188486C500980E4E /* Images.xcassets */,
 				D2428473188486C500980E4E /* Supporting Files */,
 			);
@@ -185,47 +180,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D2AEF5201885B50A0055AA5D /* Fibonacci */ = {
+		D2A86EA618884C5F000D349A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D2AEF5291885B50A0055AA5D /* SSAppDelegate.h */,
-				D2AEF52A1885B50A0055AA5D /* SSAppDelegate.m */,
-				D2AEF52C1885B50A0055AA5D /* Main.storyboard */,
-				D2AEF52F1885B50A0055AA5D /* SSViewController.h */,
-				D2AEF5301885B50A0055AA5D /* SSViewController.m */,
-				D2AEF5321885B50A0055AA5D /* Images.xcassets */,
-				D2AEF5211885B50A0055AA5D /* Supporting Files */,
+				D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */,
+				D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */,
+				D2A86EAC188853A8000D349A /* SSDetailModelController.h */,
+				D2A86EAD188853A8000D349A /* SSDetailModelController.m */,
 			);
-			path = Fibonacci;
+			name = Data;
 			sourceTree = "<group>";
 		};
-		D2AEF5211885B50A0055AA5D /* Supporting Files */ = {
+		D2A86EA718884C6C000D349A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D2AEF5221885B50A0055AA5D /* Fibonacci-Info.plist */,
-				D2AEF5231885B50A0055AA5D /* InfoPlist.strings */,
-				D2AEF5261885B50A0055AA5D /* main.m */,
-				D2AEF5281885B50A0055AA5D /* Fibonacci-Prefix.pch */,
+				D2AEF5151884B9640055AA5D /* SSStudent.h */,
+				D2AEF5161884B9640055AA5D /* SSStudent.m */,
 			);
-			name = "Supporting Files";
+			name = Model;
 			sourceTree = "<group>";
 		};
-		D2AEF53E1885B50A0055AA5D /* FibonacciTests */ = {
+		D2A86EA818884C74000D349A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D2AEF5441885B50A0055AA5D /* FibonacciTests.m */,
-				D2AEF53F1885B50A0055AA5D /* Supporting Files */,
+				D24284A11884873700980E4E /* SSDetailViewController.h */,
+				D24284A21884873700980E4E /* SSDetailViewController.m */,
+				D2A86EF01888947D000D349A /* SSDetailScrollView.h */,
+				D2A86EF11888947D000D349A /* SSDetailScrollView.m */,
+				D2428481188486C500980E4E /* SSRosterViewController.h */,
+				D2428482188486C500980E4E /* SSRosterViewController.m */,
+				D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */,
+				D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */,
 			);
-			path = FibonacciTests;
-			sourceTree = "<group>";
-		};
-		D2AEF53F1885B50A0055AA5D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D2AEF5401885B50A0055AA5D /* FibonacciTests-Info.plist */,
-				D2AEF5411885B50A0055AA5D /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D242849B188486C500980E4E /* Build configuration list for PBXNativeTarget "Roster App" */;
 			buildPhases = (
+				590ECF5D68184754BF666572 /* Check Pods Manifest.lock */,
 				D2428465188486C500980E4E /* Sources */,
 				D2428466188486C500980E4E /* Frameworks */,
 				D2428467188486C500980E4E /* Resources */,
+				563CCC6EA3744099BE0B1BFF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,6 +311,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		563CCC6EA3744099BE0B1BFF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		590ECF5D68184754BF666572 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2428465188486C500980E4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -329,10 +351,13 @@
 			files = (
 				D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */,
 				D2428483188486C500980E4E /* SSRosterViewController.m in Sources */,
+				D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */,
 				D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */,
 				D242847D188486C500980E4E /* SSAppDelegate.m in Sources */,
 				D24284A31884873700980E4E /* SSDetailViewController.m in Sources */,
 				D2428479188486C500980E4E /* main.m in Sources */,
+				D2A86EF21888947D000D349A /* SSDetailScrollView.m in Sources */,
+				D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,30 +400,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D2428495188486C500980E4E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2AEF5231885B50A0055AA5D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2AEF5241885B50A0055AA5D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D2AEF52C1885B50A0055AA5D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2AEF52D1885B50A0055AA5D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D2AEF5411885B50A0055AA5D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2AEF5421885B50A0055AA5D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -480,6 +481,7 @@
 		};
 		D242849C188486C500980E4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -494,6 +496,7 @@
 		};
 		D242849D188486C500980E4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

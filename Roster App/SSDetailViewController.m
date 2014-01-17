@@ -9,22 +9,28 @@
 #import "SSDetailViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <QuartzCore/QuartzCore.h>
+#import "SSDetailModelController.h"
+#import "SSDetailScrollView.h"
 
-@interface SSDetailViewController () <UIAlertViewDelegate, UIActionSheetDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SSDetailViewController () <UIScrollViewDelegate, UIActionSheetDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *gitHubTextField;
 @property (weak, nonatomic) IBOutlet UITextField *twitterTextField;
-@property (strong, nonatomic) IBOutlet UIImageView *placeHolder;
-@property (strong, nonatomic) UIButton *imageButton;
-@property (nonatomic) BOOL isKeyboardVisible;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISlider *rSlider;
 @property (weak, nonatomic) IBOutlet UISlider *gSlider;
 @property (weak, nonatomic) IBOutlet UISlider *bSlider;
-@property (strong, nonatomic) NSArray *RGB;
+@property (weak, nonatomic) IBOutlet SSDetailScrollView *scrollView;
+
+
+@property (strong, nonatomic) UIButton *imageButton;
+@property (strong, nonatomic) SSDetailModelController *detailModel;
 
 @end
 
 @implementation SSDetailViewController
+
+static CGFloat scrollViewCurrentOffset;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,44 +43,42 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
-    self.placeHolder.userInteractionEnabled = YES;
     
-    self.imageButton = [[UIButton alloc] initWithFrame:self.placeHolder.bounds];
-    self.imageButton.bounds = self.placeHolder.bounds;
+    //create model controller instance
+    self.detailModel = [[SSDetailModelController alloc] init];
+    self.detailModel.imageView = self.imageView;
+    
+    //allow button to activate in uiimageview
+    self.imageView.userInteractionEnabled = YES;
+    
+    //add button to uiimage view
+    self.imageButton = [[UIButton alloc] initWithFrame:self.imageView.bounds];
+    self.imageButton.bounds = self.imageView.bounds;
     self.imageButton.backgroundColor = [UIColor clearColor];
     [self.imageButton addTarget:self action:@selector(imagePickerSelectSheet) forControlEvents:UIControlEventTouchUpInside];
+    [self.imageView addSubview:self.imageButton];
     
-    [self.placeHolder addSubview:self.imageButton];
-    
+    //set delegate of uitextfields
     self.gitHubTextField.delegate = self;
     self.twitterTextField.delegate = self;
 
-    self.rSlider.maximumValue = 1;
-    self.gSlider.maximumValue = 1;
-    self.bSlider.maximumValue = 1;
+    //configurations for sliders
+    [self setupSlider];
     
-    [self.rSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
-    [self.gSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
-    [self.bSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
+    //setup scrollview for detailview
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, (self.bSlider.frame.origin.y+self.bSlider.frame.size.height+20));
+    self.scrollView.delegate = self;
+    self.scrollView.userInteractionEnabled = YES;
+    self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     
+    //listener for keyboard appeared
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardAppeared:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardDisappeared:) name:UIKeyboardWillHideNotification object:nil];
-}
-
--(void) viewDidLayoutSubviews {
-    self.placeHolder.backgroundColor = [UIColor blueColor];
-    CGPoint center = self.placeHolder.center;
-    self.placeHolder.bounds = CGRectMake(self.placeHolder.bounds.origin.x, self.placeHolder.bounds.origin.y, self.placeHolder.bounds.size.height, self.placeHolder.bounds.size.height);
-    self.placeHolder.center = center;
-    self.placeHolder.layer.cornerRadius = self.placeHolder.bounds.size.height/2;
-    self.placeHolder.layer.masksToBounds = YES;
-    self.placeHolder.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageButton.center = CGPointMake(self.placeHolder.bounds.size.width/2, self.placeHolder.bounds.size.height/2);
-
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewDidAppear");
     [super viewWillAppear:animated];
     
     [self loadStudentData];
@@ -82,15 +86,38 @@
     NSString *studentImagePath = [self.student image];
     if ([[NSFileManager defaultManager] fileExistsAtPath:studentImagePath isDirectory:NO]) {
         UIImage *studentImage = [UIImage imageWithContentsOfFile:studentImagePath];
-        self.placeHolder.image = studentImage;
+        self.imageView.image = studentImage;
+        [self.imageView faceAwareFill];
     } else {
         [self.imageButton setTitle:@"Add Photo" forState:UIControlStateNormal];
+        [self.imageButton.titleLabel setFont:[UIFont fontWithName:@"HevelticaNeue-Light" size:20.0]];
     }
 
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    NSLog(@"viewDidAppear");
+}
+
+-(void) viewDidLayoutSubviews {
+    NSLog(@"viewDidLayoutSubviews");
+    CGPoint center = self.imageView.center;
+    self.imageView.bounds = CGRectMake(self.imageView.bounds.origin.x, self.imageView.bounds.origin.y, self.imageView.bounds.size.height, self.imageView.bounds.size.height);
+    self.imageView.center = center;
+    self.imageView.layer.cornerRadius = self.imageView.bounds.size.height/2;
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageButton.center = CGPointMake(self.imageView.bounds.size.width/2, self.imageView.bounds.size.height/2);
+}
+
+
 -(void)viewWillDisappear:(BOOL)animated {
+    NSLog(@"viewWillDisappear");
     [self.delegate sendStudentObject:self.student];
+}
+
+-(void)viewDidDisappear:(BOOL)animated  {
+    NSLog(@"viewDidDisappear");
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,8 +126,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Initial Load methods
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void) setupSlider {
+    [self.rSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
+    [self.gSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
+    [self.bSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
+}
 
 
+#pragma mark load student data to detail view outlets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)loadStudentData {
     self.nameLabel.text = [self.student name];
     self.gitHubTextField.text = [self.student gitHub];
@@ -111,6 +147,52 @@
     self.bSlider.value = [[[self.student RGB] objectAtIndex:2] floatValue];
     
     [self updateBackgroundColor];
+}
+
+#pragma mark UIResponder to touches
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (self.scrollView.dragging){
+        NSLog(@"dragging");
+    } else {
+        if ( self.gitHubTextField.isFirstResponder ) {
+            [self.gitHubTextField resignFirstResponder];
+        } else {
+            [self.twitterTextField resignFirstResponder];
+        }
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    [UIView animateWithDuration:.3 animations:^{
+        self.scrollView.contentOffset = CGPointMake(0, scrollViewCurrentOffset);
+    }];
+    [self.student setGitHub:self.gitHubTextField.text];
+    [self.student setTwitter:self.twitterTextField.text];
+    self.navigationItem.hidesBackButton = NO;
+    self.imageView.userInteractionEnabled = YES;
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark observers for keyboard
+- (void) keyboardAppeared: (NSNotification *) notification {
+    if ( !self.detailModel.isKeyboardVisible ) {
+        self.detailModel.isKeyboardVisible = YES;
+    }
+    NSDictionary *info=[notification userInfo];
+    CGSize keyboardSize=[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:.3 animations:^{
+        scrollViewCurrentOffset = self.scrollView.contentOffset.y;
+        self.scrollView.contentOffset = CGPointMake(0, scrollViewCurrentOffset+(keyboardSize.height)/2);
+    }];
+    self.navigationItem.hidesBackButton = YES;
+    self.imageView.userInteractionEnabled = NO;
 }
 
 #pragma mark - UISlider Action Handler Methods
@@ -129,7 +211,7 @@
 }
 
 -(void) refreshTextViews:(UIColor*) textColor {
-    NSArray *allSubViews = [self.view subviews];
+    NSArray *allSubViews = [self.scrollView subviews];
     for (id thisView in allSubViews) {
         if ([thisView isKindOfClass:[UILabel class]]) {
             [(UILabel*)thisView setTextColor:textColor];
@@ -137,68 +219,22 @@
     }
 }
 
-#pragma mark UIAlertViewDelegate
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if ([alertView.title isEqualToString:@"Upgrade your Phone!"] &&
-        [[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Buying One Now!"]) {
-        UIActionSheet *imagePicker;
-        imagePicker = [[UIActionSheet alloc] initWithTitle:@"Until then, Get Image From"
-                                                  delegate:self cancelButtonTitle:@"Cancel"
-                                    destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", nil];
-        [imagePicker showInView:self.placeHolder];
-    }
-}
-
-#pragma mark -
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--(NSURL *)documentDir {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
-
-
-
-#pragma mark UIImagePickerControllerDelegate
+#pragma mark - UIImagePickerControllerDelegate
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)imagePickerController:(UIImagePickerController*) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *studentImage = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-        self.placeHolder.image = studentImage;
-        [self saveStudentImage:studentImage];
+        [UIImageView animateWithDuration:1 animations:^{
+            self.imageView.image = studentImage;
+            [self.imageView faceAwareFill];
+        }];
+        self.student = [self.detailModel saveStudentImage: studentImage toStudent:self.student];
         [self.imageButton setTitle:@"" forState:UIControlStateNormal];
     }];
 }
 
--(void) saveStudentImage: (UIImage*) studentImage {
-    //save path to student list
-    NSString *imageFileName = [NSString stringWithFormat:@"%@.png",[self.student name]];
-    NSURL *studentImageURL = [[self documentDir] URLByAppendingPathComponent:imageFileName];
-    [self.student setImage:[studentImageURL path]];
-    
-    //save image
-    NSData *studentImageData = UIImagePNGRepresentation(studentImage);
-    [studentImageData writeToFile:[studentImageURL path] atomically:YES];
-}
 
-#pragma mark - UIImagePicker ActionSheet
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--(void)imagePickerSelectSheet {
-    if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera]) {
-        UIActionSheet *imagePicker;
-        imagePicker = [[UIActionSheet alloc] initWithTitle:@"Get Image From"
-                                                  delegate:self cancelButtonTitle:@"Cancel"
-                                    destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Photo Library", nil];
-        
-        [imagePicker showInView:self.placeHolder];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upgrade your Phone!" message:@"Time to upgrade your life with an iOS device WITH a camera!" delegate:self cancelButtonTitle:@"Buying One Now!" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-
-#pragma mark UIActionSheetDelegate
+#pragma mark - UIActionSheetDelegate
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     UIImagePickerController *myPick = [[UIImagePickerController alloc] init];
@@ -224,41 +260,34 @@
     }];
 }
 
-#pragma mark UITextFieldDelegate
+#pragma mark UIImagePicker ActionSheet
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) keyboardAppeared: (NSNotification *) notification {
-    if ( !self.isKeyboardVisible ) {
-        self.isKeyboardVisible = YES;
-    }
-    NSDictionary *info=[notification userInfo];
-    CGSize keyboardSize=[[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    [UIView animateWithDuration:.3 animations:^{
-        [self.view setFrame:CGRectMake(0,-(keyboardSize.height/2),320,self.view.frame.size.height)];
-    }];
-    self.navigationItem.hidesBackButton = YES;
-}
-
--(void) keyboardDisappeared: (NSNotification *) notification {
-    [UIView animateWithDuration:.3 animations:^{
-        [self.view setFrame:CGRectMake(0,0,320,self.view.frame.size.height)];
-    }];
-    [self.student setGitHub:self.gitHubTextField.text];
-    [self.student setTwitter:self.twitterTextField.text];
-    self.navigationItem.hidesBackButton = NO;
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if ( self.gitHubTextField.isFirstResponder ) {
-        [self.gitHubTextField resignFirstResponder];
+-(void)imagePickerSelectSheet {
+    if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *imagePicker;
+        imagePicker = [[UIActionSheet alloc] initWithTitle:@"Get Image From"
+                                                  delegate:self cancelButtonTitle:@"Cancel"
+                                    destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Photo Library", nil];
+        
+        [imagePicker showInView:self.imageView];
     } else {
-        [self.twitterTextField resignFirstResponder];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upgrade your Phone!" message:@"Time to upgrade your life with an iOS device WITH a camera!" delegate:self cancelButtonTitle:@"Buying One Now!" otherButtonTitles:nil];
+        [alert show];
     }
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
+#pragma mark UIAlertViewDelegate
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if ([alertView.title isEqualToString:@"Upgrade your Phone!"] &&
+        [[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Buying One Now!"]) {
+        UIActionSheet *imagePicker;
+        imagePicker = [[UIActionSheet alloc] initWithTitle:@"Until then, Get Image From"
+                                                  delegate:self cancelButtonTitle:@"Cancel"
+                                    destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", nil];
+        [imagePicker showInView:self.imageView];
+    }
 }
+
 
 @end

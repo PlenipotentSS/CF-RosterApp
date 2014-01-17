@@ -7,12 +7,14 @@
 //
 
 #import "SSRosterModelController.h"
+#import "SSRosterTableViewCell.h"
 
 @interface SSRosterModelController()
 
 @property (nonatomic) BOOL isAsc;
 
 @property (nonatomic) NSMutableArray *studentData;
+@property (nonatomic) NSMutableArray *instructorData;
 
 @end
 
@@ -72,6 +74,10 @@
     return (NSArray*)self.studentData;
 }
 
+-(NSArray*) getInstructorData {
+    return (NSArray*)self.instructorData;
+}
+
 -(NSURL *)documentDir {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
@@ -88,10 +94,16 @@
     self.studentData = [[NSMutableArray alloc] init];
     for (NSDictionary *student in students) {
         SSStudent *thisStudent = [[SSStudent alloc] initWithName:[student objectForKey:@"name"]
-                                                                    andImage:[student objectForKey:@"image"]
-                                                                  andTwitter:[student objectForKey:@"twitter"]
-                                                                   andGitHub:[student objectForKey:@"github"]];
-        [self.studentData addObject:thisStudent];
+                                                        andImage:[student objectForKey:@"image"]
+                                                      andTwitter:[student objectForKey:@"twitter"]
+                                                       andGitHub:[student objectForKey:@"github"]
+                                                    isInstructor:[student objectForKey:@"instructor"]];
+        if ([student objectForKey:@"instructor"]) {
+            [self.studentData addObject:thisStudent];
+        } else {
+            
+        }
+
     }
 }
 
@@ -109,6 +121,10 @@
     return [self.studentData objectAtIndex:index];
 }
 
+-(SSStudent*) getInstructorAtIndex: (NSInteger) index {
+    return [self.instructorData objectAtIndex:index];
+}
+
 #pragma mark UITableViewDataSource
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -121,44 +137,26 @@
     return [self.studentData count];
 }
 
-
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (self.instructorData && [self.instructorData count] > 0) {
+        return 2;
+    } else {
+        return 1;
+    }
+}
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = @"theCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    SSStudent *thisStudent = [self.studentData objectAtIndex:indexPath.row];
-    
-    if (![[thisStudent image] isEqualToString:@""]) {
-        NSString *studentImagePath = [thisStudent image];
-        UIImage *studentImage = [UIImage imageWithContentsOfFile:studentImagePath];
-        cell.imageView.image = studentImage;
-        
-        
-        cell.imageView.layer.cornerRadius = cell.imageView.layer.bounds.size.height/2;
-        cell.imageView.layer.masksToBounds = YES;
+    SSRosterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    if (indexPath.section == 0 ) {
+        SSStudent *thisStudent = [self.studentData objectAtIndex:indexPath.row];
+        [cell setStudent:thisStudent];
     } else {
-        cell.imageView.image = nil;
+        SSStudent *thisStudent = [self.instructorData objectAtIndex:indexPath.row];
+        [cell setStudent:thisStudent];
     }
-    UIView *topPaddingView = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x, cell.bounds.origin.x, cell.bounds.size.width, 5)];
-    topPaddingView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    UIView *bottomPaddingView = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x, cell.frame.size.height-5, cell.bounds.size.width, 5)];
-    bottomPaddingView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [cell insertSubview:topPaddingView belowSubview:cell.imageView];
-    [cell insertSubview:bottomPaddingView belowSubview:cell.imageView];
 
-    cell.backgroundColor = [UIColor colorWithRed:([[[thisStudent RGB] objectAtIndex:0] floatValue])
-                                           green:([[[thisStudent RGB] objectAtIndex:1] floatValue])
-                                            blue:([[[thisStudent RGB] objectAtIndex:2] floatValue])
-                                           alpha:1];
     
-    cell.textLabel.text = [thisStudent name];
-    cell.detailTextLabel.text = [thisStudent gitHub];
-    UIColor *textColor = [UIColor colorWithRed:(1-[[[thisStudent RGB] objectAtIndex:0] floatValue])
-                                         green:(1-[[[thisStudent RGB] objectAtIndex:1] floatValue])
-                                          blue:(1-[[[thisStudent RGB] objectAtIndex:2] floatValue])
-                                         alpha:1];
-    cell.textLabel.textColor = textColor;
-    cell.detailTextLabel.textColor = textColor;
     return cell;
 }
 

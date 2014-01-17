@@ -15,10 +15,12 @@
 @property (nonatomic) NSString *twitter;
 @property (nonatomic) NSString *gitHub;
 @property (nonatomic) NSArray *RGB;
+@property (nonatomic) NSString* isInstructor;
 
 -(instancetype) initWithName: (NSString*) name
                     andImage: (NSString*) image
                   andTwitter: (NSString*) twitter
-                   andGitHub: github;
+                   andGitHub: (NSString*) github
+                isInstructor: (NSString*) yesNO;
 
 @end
