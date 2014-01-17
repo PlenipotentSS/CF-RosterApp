@@ -16,6 +16,8 @@
 
 -(SSStudent*) getStudentAtIndex: (NSInteger) index;
 -(NSArray*) getStudentData;
+-(SSStudent*) getInstructorAtIndex: (NSInteger) index;
+-(NSArray*) getInstructorData;
 
 -(void) sortByName;
 -(void) sortByGitHub;

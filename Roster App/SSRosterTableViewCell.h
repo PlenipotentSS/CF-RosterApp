@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SSStudent.h"
+#import "UIImageView+UIImageView_FaceAwareFill.h"
 
 @interface SSRosterTableViewCell : UITableViewCell
+
+@property (nonatomic) UIView *thisContentView;
+@property (nonatomic) UIImageView *thisImageView;
+@property (nonatomic) UILabel *contentTitle;
+@property (nonatomic) UILabel *contentDetail;
 
 @property (nonatomic) SSStudent* student;
 

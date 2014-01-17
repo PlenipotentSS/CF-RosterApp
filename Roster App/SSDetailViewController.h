@@ -13,6 +13,7 @@
 @protocol SSDetailViewDelegate <NSObject>
 
 -(void) sendStudentObject: (SSStudent*) student;
+-(void) sendInstructorObject: (SSStudent*) instructor;
 
 @end
 

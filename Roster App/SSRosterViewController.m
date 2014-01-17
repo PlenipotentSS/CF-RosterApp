@@ -91,7 +91,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toDetail"]) {
         NSIndexPath *indexPath = [self.theTableView indexPathForSelectedRow];
-        SSStudent *student = [self.rosterMC getStudentAtIndex: indexPath.row];
+        SSStudent *student;
+        if (indexPath.section == 1 ) {
+            student = [self.rosterMC getStudentAtIndex: indexPath.row];
+        } else {
+            student = [self.rosterMC getInstructorAtIndex: indexPath.row];
+        }
         SSDetailViewController *detailView = (SSDetailViewController*)segue.destinationViewController;
         [detailView setStudent:student];
         detailView.delegate = self;
@@ -99,11 +104,22 @@
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
 #pragma mark SSDetailViewDelegate
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--(void) sendStudentObject: (SSStudent*) student {
-    NSIndexPath *pathToThisStudent = [NSIndexPath indexPathForRow:[[self.rosterMC getStudentData] indexOfObject:student] inSection:0];
+-(void) sendInstructorObject: (SSStudent*) student {
+    NSIndexPath *pathToThisStudent = [NSIndexPath indexPathForRow:[[self.rosterMC getInstructorData] indexOfObject:student] inSection:0];
     [self.theTableView reloadRowsAtIndexPaths:@[pathToThisStudent] withRowAnimation:UITableViewRowAnimationLeft];
 }
+
+-(void) sendStudentObject: (SSStudent*) student {
+    NSIndexPath *pathToThisStudent = [NSIndexPath indexPathForRow:[[self.rosterMC getStudentData] indexOfObject:student] inSection:1];
+    [self.theTableView reloadRowsAtIndexPaths:@[pathToThisStudent] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+
 
 @end

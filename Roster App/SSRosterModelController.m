@@ -38,34 +38,50 @@
 #pragma mark - Sorting methods
 -(void) sortByName {
     NSArray* sortedStudents;
+    NSArray* sortedInstructors;
     if (!self.isAsc) {
         sortedStudents = [(NSArray*)self.studentData sortedArrayUsingComparator:^(id student1, id student2) {
                 return [[(SSStudent*)student1  name] compare: [(SSStudent*)student2  name]];
+        }];
+        sortedInstructors = [(NSArray*)self.instructorData sortedArrayUsingComparator:^(id student1, id student2) {
+            return [[(SSStudent*)student1  name] compare: [(SSStudent*)student2  name]];
         }];
         self.isAsc = YES;
     } else {
         sortedStudents = [(NSArray*)self.studentData sortedArrayUsingComparator:^(id student1, id student2) {
             return [[(SSStudent*)student2  name] compare: [(SSStudent*)student1  name]];
         }];
+        sortedInstructors = [(NSArray*)self.instructorData sortedArrayUsingComparator:^(id student1, id student2) {
+            return [[(SSStudent*)student2  name] compare: [(SSStudent*)student1  name]];
+        }];
         self.isAsc = NO;
     }
     self.studentData = [sortedStudents mutableCopy];
+    self.instructorData = [sortedInstructors mutableCopy];
 }
 
 -(void) sortByGitHub {
     NSArray* sortedStudents;
+    NSArray* sortedInstructors;
     if (!self.isAsc) {
         sortedStudents = [(NSArray*)self.studentData sortedArrayUsingComparator:^(id student1, id student2) {
             return [[(SSStudent*)student1  gitHub] compare: [(SSStudent*)student2  gitHub]];
+        }];
+        sortedInstructors = [(NSArray*)self.instructorData sortedArrayUsingComparator:^(id student1, id student2) {
+            return [[(SSStudent*)student1  name] compare: [(SSStudent*)student2  name]];
         }];
         self.isAsc = YES;
     } else {
         sortedStudents = [(NSArray*)self.studentData sortedArrayUsingComparator:^(id student1, id student2) {
             return [[(SSStudent*)student2  gitHub] compare: [(SSStudent*)student1  gitHub]];
         }];
+        sortedInstructors = [(NSArray*)self.instructorData sortedArrayUsingComparator:^(id student1, id student2) {
+            return [[(SSStudent*)student2  name] compare: [(SSStudent*)student1  name]];
+        }];
         self.isAsc = NO;
     }
     self.studentData = [sortedStudents mutableCopy];
+    self.instructorData = [sortedInstructors mutableCopy];
     
 }
 
@@ -92,16 +108,17 @@
 
 -(void) parseBootcamp: (NSArray*) students {
     self.studentData = [[NSMutableArray alloc] init];
+    self.instructorData = [[NSMutableArray alloc] init];
     for (NSDictionary *student in students) {
         SSStudent *thisStudent = [[SSStudent alloc] initWithName:[student objectForKey:@"name"]
                                                         andImage:[student objectForKey:@"image"]
                                                       andTwitter:[student objectForKey:@"twitter"]
                                                        andGitHub:[student objectForKey:@"github"]
                                                     isInstructor:[student objectForKey:@"instructor"]];
-        if ([student objectForKey:@"instructor"]) {
-            [self.studentData addObject:thisStudent];
+        if ([student objectForKey:@"instructor"] && ![[student objectForKey:@"instructor"] isEqualToString:@""]) {
+            [self.instructorData addObject:thisStudent];
         } else {
-            
+            [self.studentData addObject:thisStudent];
         }
 
     }
@@ -110,11 +127,15 @@
 -(void) archiveBootCamp {
     NSURL *archiveURL = [[self documentDir] URLByAppendingPathComponent:@"SavedStudents"];;
     [NSKeyedArchiver archiveRootObject:self.studentData toFile:[archiveURL path]];
+    NSURL *archiveInstructorsURL = [[self documentDir] URLByAppendingPathComponent:@"SavedInstructors"];;
+    [NSKeyedArchiver archiveRootObject:self.instructorData toFile:[archiveInstructorsURL path]];
 }
 
 -(void) unarchiveBootCamp {
     NSURL *archiveURL = [[self documentDir] URLByAppendingPathComponent:@"SavedStudents"];;
-    self.studentData = [[NSKeyedUnarchiver unarchiveObjectWithFile:[archiveURL path]] mutableCopy];
+    self.studentData = [NSKeyedUnarchiver unarchiveObjectWithFile:[archiveURL path]];
+    NSURL *archiveInstructorsURL = [[self documentDir] URLByAppendingPathComponent:@"SavedInstructors"];;
+    self.instructorData = [NSKeyedUnarchiver unarchiveObjectWithFile:[archiveInstructorsURL path]];
 }
 
 -(SSStudent*) getStudentAtIndex: (NSInteger) index {
@@ -128,13 +149,19 @@
 #pragma mark UITableViewDataSource
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
+        return @"Instructors";
+    } else if (section == 1) {
         return @"Students";
     }
     return @"";
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.studentData count];
+    if (section == 0)
+        return [self.instructorData count];
+    else if (section == 1)
+        return [self.studentData count];
+    return 0;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -149,10 +176,10 @@
     NSString *cellIdentifier = @"theCell";
     SSRosterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (indexPath.section == 0 ) {
-        SSStudent *thisStudent = [self.studentData objectAtIndex:indexPath.row];
-        [cell setStudent:thisStudent];
-    } else {
         SSStudent *thisStudent = [self.instructorData objectAtIndex:indexPath.row];
+        [cell setStudent:thisStudent];
+    } else if (indexPath.section == 1 ) {
+        SSStudent *thisStudent = [self.studentData objectAtIndex:indexPath.row];
         [cell setStudent:thisStudent];
     }
 

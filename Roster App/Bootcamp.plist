@@ -56,18 +56,6 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Raghav Haran</string>
-		<key>image</key>
-		<string></string>
-		<key>twitter</key>
-		<string></string>
-		<key>github</key>
-		<string></string>
-		<key>instructor</key>
-		<string>Rails</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>Brad Johnson</string>
 		<key>image</key>
 		<string></string>

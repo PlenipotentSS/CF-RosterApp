@@ -43,7 +43,6 @@ static CGFloat scrollViewCurrentOffset;
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     //create model controller instance
@@ -78,7 +77,6 @@ static CGFloat scrollViewCurrentOffset;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    NSLog(@"viewDidAppear");
     [super viewWillAppear:animated];
     
     [self loadStudentData];
@@ -90,34 +88,18 @@ static CGFloat scrollViewCurrentOffset;
         [self.imageView faceAwareFill];
     } else {
         [self.imageButton setTitle:@"Add Photo" forState:UIControlStateNormal];
-        [self.imageButton.titleLabel setFont:[UIFont fontWithName:@"HevelticaNeue-Light" size:20.0]];
+        [self.imageButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:25.0]];
     }
-
-}
-
--(void) viewDidAppear:(BOOL)animated {
-    NSLog(@"viewDidAppear");
-}
-
--(void) viewDidLayoutSubviews {
-    NSLog(@"viewDidLayoutSubviews");
-    CGPoint center = self.imageView.center;
-    self.imageView.bounds = CGRectMake(self.imageView.bounds.origin.x, self.imageView.bounds.origin.y, self.imageView.bounds.size.height, self.imageView.bounds.size.height);
-    self.imageView.center = center;
+    
     self.imageView.layer.cornerRadius = self.imageView.bounds.size.height/2;
     self.imageView.layer.masksToBounds = YES;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageButton.center = CGPointMake(self.imageView.bounds.size.width/2, self.imageView.bounds.size.height/2);
 }
-
 
 -(void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"viewWillDisappear");
-    [self.delegate sendStudentObject:self.student];
-}
-
--(void)viewDidDisappear:(BOOL)animated  {
-    NSLog(@"viewDidDisappear");
+    if (self.student.isInstructor && ![[self.student isInstructor] isEqualToString:@""])
+        [self.delegate sendInstructorObject:self.student];
+    else
+        [self.delegate sendStudentObject:self.student];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,6 +111,9 @@ static CGFloat scrollViewCurrentOffset;
 #pragma mark - Initial Load methods
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -(void) setupSlider {
+    [self.rSlider setThumbImage:[UIImage imageNamed:@"RSliderButton.png"] forState:UIControlStateNormal];
+    [self.gSlider setThumbImage:[UIImage imageNamed:@"GSliderButton.png"] forState:UIControlStateNormal];
+    [self.bSlider setThumbImage:[UIImage imageNamed:@"BSliderButton.png"] forState:UIControlStateNormal];
     [self.rSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
     [self.gSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
     [self.bSlider addTarget:self action:@selector(updateBackgroundColor) forControlEvents:UIControlEventValueChanged];
@@ -152,7 +137,6 @@ static CGFloat scrollViewCurrentOffset;
 #pragma mark UIResponder to touches
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (self.scrollView.dragging){
-        NSLog(@"dragging");
     } else {
         if ( self.gitHubTextField.isFirstResponder ) {
             [self.gitHubTextField resignFirstResponder];
@@ -206,7 +190,7 @@ static CGFloat scrollViewCurrentOffset;
     UIColor *textColor = [UIColor colorWithRed:(1-self.rSlider.value)
                                      green:(1-self.gSlider.value)
                                       blue:(1-self.bSlider.value)
-                                     alpha:1];
+                                     alpha:7];
     [self refreshTextViews:textColor];
 }
 
