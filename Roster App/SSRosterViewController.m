@@ -54,6 +54,11 @@
 }
 
 #pragma mark - ActionSheet Sorting
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [self.theTableView reloadData];
+}
+
+#pragma mark - ActionSheet Sorting
 -(void) showActionSheet {
     UIActionSheet *sortSheet = [[UIActionSheet alloc] initWithTitle:@"Sort by" delegate:self cancelButtonTitle:@"Nevermind" destructiveButtonTitle:nil otherButtonTitles:@"Name", @"GitHub", nil];
     [sortSheet showInView:self.view];

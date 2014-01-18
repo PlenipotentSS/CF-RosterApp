@@ -31,7 +31,7 @@
     
     self.backgroundColor = [UIColor clearColor];
     if (!self.thisContentView) {
-        self.thisContentView = [[UIView alloc] initWithFrame:CGRectMake(0.f,10,320.f,self.frame.size.height-20)];
+        self.thisContentView = [[UIView alloc] initWithFrame:CGRectMake(0.f,10,self.frame.size.width,self.frame.size.height-20)];
         self.thisImageView = [[UIImageView alloc] initWithFrame: CGRectMake(10.f,5.f, 60.f, 60.f)];
         self.contentTitle = [[UILabel alloc] initWithFrame:CGRectMake(78.f, 14.f, 200.f, 21.f)];
         self.contentDetail = [[UILabel alloc] initWithFrame:CGRectMake(78.f, 29.f, 200.f, 21.f)];
@@ -39,14 +39,24 @@
         [self.thisContentView addSubview:self.contentDetail];
         [self.contentView addSubview:self.thisContentView];
         [self.contentView addSubview:self.thisImageView];
+    } else {
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            
+            self.thisContentView.frame = CGRectMake(0.f,10,self.frame.size.width,self.frame.size.height-20);
+        } completion:nil];
     }
+    
     self.contentTitle.text = [student name];
     [self.contentTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:20]];
     self.contentDetail.text = [student gitHub];
     [self.contentDetail setFont:[UIFont fontWithName:@"HelveticaNeue-ThinItalic" size:11]];
     
-    if (![[student image] isEqualToString:@""]) {
-        NSString *studentImagePath = [student image];
+    if ([student theImage]) {
+        self.thisImageView.image = [student theImage];
+        self.thisImageView.layer.cornerRadius = self.thisImageView.layer.bounds.size.height/2;
+        self.thisImageView.layer.masksToBounds = YES;
+    } else if (![[student imagePath] isEqualToString:@""]) {
+        NSString *studentImagePath = [student imagePath];
         UIImage *studentImage = [UIImage imageWithContentsOfFile:studentImagePath];
         self.thisImageView.image = studentImage;
         self.thisImageView.layer.cornerRadius = self.thisImageView.layer.bounds.size.height/2;

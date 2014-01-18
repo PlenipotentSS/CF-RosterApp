@@ -31,7 +31,7 @@
     //save path to student list
     NSString *imageFileName = [NSString stringWithFormat:@"%@.png",[student name]];
     NSURL *studentImageURL = [[self documentDir] URLByAppendingPathComponent:imageFileName];
-    [student setImage:[studentImageURL path]];
+    [student setImagePath:[studentImageURL path]];
     
     //save image
     NSData *studentImageData = UIImagePNGRepresentation(studentImage);

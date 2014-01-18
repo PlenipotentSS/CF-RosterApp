@@ -22,7 +22,7 @@
     self = [super self];
     if (self) {
         _name = name;
-        _image = image;
+        _imagePath = image;
         _twitter = twitter;
         _gitHub = github;
         _RGB = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:1],[NSNumber numberWithFloat:1],[NSNumber numberWithFloat:1], nil];
@@ -34,7 +34,7 @@
 #pragma mark NSCoding
 -(id)initWithCoder:(NSCoder *)aDecoder  {
     _name = [aDecoder decodeObjectForKey:@"name"];
-    _image =[aDecoder decodeObjectForKey:@"image"];
+    _imagePath =[aDecoder decodeObjectForKey:@"image"];
     _gitHub = [aDecoder decodeObjectForKey:@"github"];
     _twitter = [aDecoder decodeObjectForKey:@"twitter"];
     _RGB = [aDecoder decodeObjectForKey:@"RGB"];
@@ -45,7 +45,7 @@
 
 -(void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.image forKey:@"image"];
+    [aCoder encodeObject:self.imagePath forKey:@"image"];
     [aCoder encodeObject:self.gitHub forKey:@"github"];
     [aCoder encodeObject:self.twitter forKey:@"twitter"];
     [aCoder encodeObject:self.RGB forKey:@"RGB"];

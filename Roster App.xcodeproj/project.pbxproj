@@ -144,6 +144,7 @@
 				D2A86EA718884C6C000D349A /* Model */,
 				D2A86EA818884C74000D349A /* Controller */,
 				D2A86EA618884C5F000D349A /* Data */,
+				D25542D118899CA400345B38 /* Views */,
 				D2428484188486C500980E4E /* Images.xcassets */,
 				D2428473188486C500980E4E /* Supporting Files */,
 			);
@@ -180,6 +181,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D25542D118899CA400345B38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */,
+				D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		D2A86EA618884C5F000D349A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +219,6 @@
 				D2A86EF11888947D000D349A /* SSDetailScrollView.m */,
 				D2428481188486C500980E4E /* SSRosterViewController.h */,
 				D2428482188486C500980E4E /* SSRosterViewController.m */,
-				D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */,
-				D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -487,7 +495,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roster App/Roster App-Prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Roster App/Roster App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

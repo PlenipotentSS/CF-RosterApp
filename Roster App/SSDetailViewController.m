@@ -67,7 +67,7 @@ static CGFloat scrollViewCurrentOffset;
     [self setupSlider];
     
     //setup scrollview for detailview
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, (self.bSlider.frame.origin.y+self.bSlider.frame.size.height+20));
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, (self.bSlider.frame.origin.y+self.bSlider.frame.size.height+100));
     self.scrollView.delegate = self;
     self.scrollView.userInteractionEnabled = YES;
     self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
@@ -81,11 +81,10 @@ static CGFloat scrollViewCurrentOffset;
     
     [self loadStudentData];
     
-    NSString *studentImagePath = [self.student image];
+    NSString *studentImagePath = [self.student imagePath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:studentImagePath isDirectory:NO]) {
         UIImage *studentImage = [UIImage imageWithContentsOfFile:studentImagePath];
         self.imageView.image = studentImage;
-        [self.imageView faceAwareFill];
     } else {
         [self.imageButton setTitle:@"Add Photo" forState:UIControlStateNormal];
         [self.imageButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:25.0]];
@@ -93,6 +92,31 @@ static CGFloat scrollViewCurrentOffset;
     
     self.imageView.layer.cornerRadius = self.imageView.bounds.size.height/2;
     self.imageView.layer.masksToBounds = YES;
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    if (fromInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        [UIView animateWithDuration:.5
+                              delay:0
+                            options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.navigationController.navigationBar.alpha = 0;
+        }
+                         completion:^(BOOL completed) {
+                             self.navigationController.navigationBar.hidden = YES;
+                         }];
+    } else {
+        self.navigationController.navigationBar.hidden = NO;
+        self.navigationController.navigationBar.alpha = 0;
+        [UIView animateWithDuration:.5
+                              delay:0
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:^{
+                             self.scrollView.frame = CGRectMake(0,64.f,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+                             self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height+64.f);
+                             self.navigationController.navigationBar.alpha = 1;
+                         }
+                         completion:^(BOOL completed) {}];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -208,13 +232,25 @@ static CGFloat scrollViewCurrentOffset;
 -(void)imagePickerController:(UIImagePickerController*) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *studentImage = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-        [UIImageView animateWithDuration:1 animations:^{
-            self.imageView.image = studentImage;
-            [self.imageView faceAwareFill];
-        }];
-        self.student = [self.detailModel saveStudentImage: studentImage toStudent:self.student];
+        
+        self.imageView.image = studentImage;
+        [self.imageView faceAwareFill];
+        UIImage *croppedImage = [self cropImage:self.imageView.image];
+        
+        self.student = [self.detailModel saveStudentImage: croppedImage toStudent:self.student];
         [self.imageButton setTitle:@"" forState:UIControlStateNormal];
     }];
+}
+
+-(UIImage*) cropImage: (UIImage*) theImage {
+
+    CGFloat minLength = MIN(theImage.size.height,theImage.size.width);
+    minLength = minLength*theImage.scale;
+    CGRect cropRect = CGRectMake(0,0,minLength,minLength);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([self.imageView.image CGImage], cropRect);
+    UIImage *newImage = [UIImage imageWithCGImage:imageRef];
+
+    return newImage;
 }
 
 

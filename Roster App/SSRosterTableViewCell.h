@@ -17,6 +17,6 @@
 @property (nonatomic) UILabel *contentTitle;
 @property (nonatomic) UILabel *contentDetail;
 
-@property (nonatomic) SSStudent* student;
+@property (nonatomic,weak) SSStudent* student;
 
 @end

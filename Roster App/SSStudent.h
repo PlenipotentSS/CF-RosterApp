@@ -11,11 +11,13 @@
 @interface SSStudent : NSObject <NSCoding>
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *image;
+@property (nonatomic) NSString *imagePath;
 @property (nonatomic) NSString *twitter;
 @property (nonatomic) NSString *gitHub;
 @property (nonatomic) NSArray *RGB;
 @property (nonatomic) NSString* isInstructor;
+
+@property (nonatomic) UIImage *theImage;
 
 -(instancetype) initWithName: (NSString*) name
                     andImage: (NSString*) image
