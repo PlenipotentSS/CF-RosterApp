@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82931749CAF243E5857FDA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C23AD66AD864442DA125BE07 /* libPods.a */; };
 		D242846D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
 		D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846E188486C500980E4E /* CoreGraphics.framework */; };
 		D2428471188486C500980E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
@@ -14,7 +15,7 @@
 		D2428479188486C500980E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428478188486C500980E4E /* main.m */; };
 		D242847D188486C500980E4E /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D242847C188486C500980E4E /* SSAppDelegate.m */; };
 		D2428480188486C500980E4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D242847E188486C500980E4E /* Main.storyboard */; };
-		D2428483188486C500980E4E /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428482188486C500980E4E /* SSViewController.m */; };
+		D2428483188486C500980E4E /* SSRosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428482188486C500980E4E /* SSRosterViewController.m */; };
 		D2428485188486C500980E4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2428484188486C500980E4E /* Images.xcassets */; };
 		D242848C188486C500980E4E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242848B188486C500980E4E /* XCTest.framework */; };
 		D242848D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
@@ -22,6 +23,12 @@
 		D2428496188486C500980E4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2428494188486C500980E4E /* InfoPlist.strings */; };
 		D2428498188486C500980E4E /* Roster_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428497188486C500980E4E /* Roster_AppTests.m */; };
 		D24284A31884873700980E4E /* SSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24284A21884873700980E4E /* SSDetailViewController.m */; };
+		D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */; };
+		D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAD188853A8000D349A /* SSDetailModelController.m */; };
+		D2A86EF21888947D000D349A /* SSDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EF11888947D000D349A /* SSDetailScrollView.m */; };
+		D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5161884B9640055AA5D /* SSStudent.m */; };
+		D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */; };
+		D2AEF5DE1885E0B80055AA5D /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70995428ED394811ACBC63C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C23AD66AD864442DA125BE07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2428469188486C500980E4E /* Roster App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roster App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D242846C188486C500980E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D242846E188486C500980E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +55,8 @@
 		D242847B188486C500980E4E /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
 		D242847C188486C500980E4E /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
 		D242847F188486C500980E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D2428481188486C500980E4E /* SSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
-		D2428482188486C500980E4E /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
+		D2428481188486C500980E4E /* SSRosterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSRosterViewController.h; sourceTree = "<group>"; };
+		D2428482188486C500980E4E /* SSRosterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSRosterViewController.m; sourceTree = "<group>"; };
 		D2428484188486C500980E4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D242848A188486C500980E4E /* Roster AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roster AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D242848B188486C500980E4E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -56,6 +65,17 @@
 		D2428497188486C500980E4E /* Roster_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roster_AppTests.m; sourceTree = "<group>"; };
 		D24284A11884873700980E4E /* SSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailViewController.h; sourceTree = "<group>"; };
 		D24284A21884873700980E4E /* SSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailViewController.m; sourceTree = "<group>"; };
+		D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRosterTableViewCell.h; sourceTree = "<group>"; };
+		D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRosterTableViewCell.m; sourceTree = "<group>"; };
+		D2A86EAC188853A8000D349A /* SSDetailModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailModelController.h; sourceTree = "<group>"; };
+		D2A86EAD188853A8000D349A /* SSDetailModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailModelController.m; sourceTree = "<group>"; };
+		D2A86EF01888947D000D349A /* SSDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailScrollView.h; sourceTree = "<group>"; };
+		D2A86EF11888947D000D349A /* SSDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailScrollView.m; sourceTree = "<group>"; };
+		D2AEF5151884B9640055AA5D /* SSStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStudent.h; sourceTree = "<group>"; };
+		D2AEF5161884B9640055AA5D /* SSStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStudent.m; sourceTree = "<group>"; };
+		D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRosterModelController.h; sourceTree = "<group>"; };
+		D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRosterModelController.m; sourceTree = "<group>"; };
+		D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bootcamp.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,7 @@
 				D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */,
 				D2428471188486C500980E4E /* UIKit.framework in Frameworks */,
 				D242846D188486C500980E4E /* Foundation.framework in Frameworks */,
+				82931749CAF243E5857FDA0C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,7 @@
 				D2428491188486C500980E4E /* Roster AppTests */,
 				D242846B188486C500980E4E /* Frameworks */,
 				D242846A188486C500980E4E /* Products */,
+				70995428ED394811ACBC63C1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +130,7 @@
 				D242846E188486C500980E4E /* CoreGraphics.framework */,
 				D2428470188486C500980E4E /* UIKit.framework */,
 				D242848B188486C500980E4E /* XCTest.framework */,
+				C23AD66AD864442DA125BE07 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,10 +141,10 @@
 				D242847B188486C500980E4E /* SSAppDelegate.h */,
 				D242847C188486C500980E4E /* SSAppDelegate.m */,
 				D242847E188486C500980E4E /* Main.storyboard */,
-				D24284A11884873700980E4E /* SSDetailViewController.h */,
-				D24284A21884873700980E4E /* SSDetailViewController.m */,
-				D2428481188486C500980E4E /* SSViewController.h */,
-				D2428482188486C500980E4E /* SSViewController.m */,
+				D2A86EA718884C6C000D349A /* Model */,
+				D2A86EA818884C74000D349A /* Controller */,
+				D2A86EA618884C5F000D349A /* Data */,
+				D25542D118899CA400345B38 /* Views */,
 				D2428484188486C500980E4E /* Images.xcassets */,
 				D2428473188486C500980E4E /* Supporting Files */,
 			);
@@ -132,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D2428474188486C500980E4E /* Roster App-Info.plist */,
+				D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */,
 				D2428475188486C500980E4E /* InfoPlist.strings */,
 				D2428478188486C500980E4E /* main.m */,
 				D242847A188486C500980E4E /* Roster App-Prefix.pch */,
@@ -157,6 +181,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D25542D118899CA400345B38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */,
+				D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D2A86EA618884C5F000D349A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */,
+				D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */,
+				D2A86EAC188853A8000D349A /* SSDetailModelController.h */,
+				D2A86EAD188853A8000D349A /* SSDetailModelController.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D2A86EA718884C6C000D349A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2AEF5151884B9640055AA5D /* SSStudent.h */,
+				D2AEF5161884B9640055AA5D /* SSStudent.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D2A86EA818884C74000D349A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D24284A11884873700980E4E /* SSDetailViewController.h */,
+				D24284A21884873700980E4E /* SSDetailViewController.m */,
+				D2A86EF01888947D000D349A /* SSDetailScrollView.h */,
+				D2A86EF11888947D000D349A /* SSDetailScrollView.m */,
+				D2428481188486C500980E4E /* SSRosterViewController.h */,
+				D2428482188486C500980E4E /* SSRosterViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D242849B188486C500980E4E /* Build configuration list for PBXNativeTarget "Roster App" */;
 			buildPhases = (
+				590ECF5D68184754BF666572 /* Check Pods Manifest.lock */,
 				D2428465188486C500980E4E /* Sources */,
 				D2428466188486C500980E4E /* Frameworks */,
 				D2428467188486C500980E4E /* Resources */,
+				563CCC6EA3744099BE0B1BFF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2428485188486C500980E4E /* Images.xcassets in Resources */,
+				D2AEF5DE1885E0B80055AA5D /* Bootcamp.plist in Resources */,
 				D2428477188486C500980E4E /* InfoPlist.strings in Resources */,
 				D2428480188486C500980E4E /* Main.storyboard in Resources */,
 			);
@@ -250,15 +319,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		563CCC6EA3744099BE0B1BFF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		590ECF5D68184754BF666572 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2428465188486C500980E4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2428483188486C500980E4E /* SSViewController.m in Sources */,
+				D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */,
+				D2428483188486C500980E4E /* SSRosterViewController.m in Sources */,
+				D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */,
+				D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */,
 				D242847D188486C500980E4E /* SSAppDelegate.m in Sources */,
 				D24284A31884873700980E4E /* SSDetailViewController.m in Sources */,
 				D2428479188486C500980E4E /* main.m in Sources */,
+				D2A86EF21888947D000D349A /* SSDetailScrollView.m in Sources */,
+				D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,11 +489,13 @@
 		};
 		D242849C188486C500980E4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roster App/Roster App-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Roster App/Roster App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -395,11 +504,13 @@
 		};
 		D242849D188486C500980E4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roster App/Roster App-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Roster App/Roster App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -467,6 +578,7 @@
 				D242849D188486C500980E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D242849E188486C500980E4E /* Build configuration list for PBXNativeTarget "Roster AppTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +587,7 @@
 				D24284A0188486C500980E4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

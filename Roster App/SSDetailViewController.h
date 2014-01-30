@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSStudent.h"
+#import "UIImageView+UIImageView_FaceAwareFill.h"
+
+@protocol SSDetailViewDelegate <NSObject>
+
+-(void) sendStudentObject: (SSStudent*) student;
+-(void) sendInstructorObject: (SSStudent*) instructor;
+
+@end
 
 @interface SSDetailViewController : UIViewController
-@property (strong,nonatomic) NSString *name;
-@property (strong,nonatomic) NSString *instructor;
-@property (weak, nonatomic) IBOutlet UIImageView *portraitView;
+@property (strong,nonatomic) SSStudent *student;
+@property (unsafe_unretained) id<SSDetailViewDelegate> delegate;
 
 @end
