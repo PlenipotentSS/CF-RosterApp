@@ -28,26 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2428489188486C500980E4E"
-               BuildableName = "Roster AppTests.xctest"
-               BlueprintName = "Roster AppTests"
-               ReferencedContainer = "container:Roster App.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2AEF5371885B50A0055AA5D"
-               BuildableName = "FibonacciTests.xctest"
-               BlueprintName = "FibonacciTests"
-               ReferencedContainer = "container:Roster App.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
