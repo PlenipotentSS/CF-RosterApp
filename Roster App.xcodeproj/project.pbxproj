@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82931749CAF243E5857FDA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C23AD66AD864442DA125BE07 /* libPods.a */; };
-		D2373064189A24C4002503B5 /* BotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2373063189A24C4002503B5 /* BotTest.m */; };
-		D2373067189A24F9002503B5 /* BotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2373063189A24C4002503B5 /* BotTest.m */; };
+		D23E6EF3189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E6EF2189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.m */; };
+		D23E6EF6189AD5910032209D /* TestBot.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E6EF5189AD5910032209D /* TestBot.m */; };
 		D242846D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
 		D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846E188486C500980E4E /* CoreGraphics.framework */; };
 		D2428471188486C500980E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
@@ -44,9 +43,10 @@
 
 /* Begin PBXFileReference section */
 		70995428ED394811ACBC63C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		C23AD66AD864442DA125BE07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2373063189A24C4002503B5 /* BotTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotTest.m; sourceTree = "<group>"; };
-		D2428469188486C500980E4E /* Roster App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roster App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23E6EF1189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIImageView_FaceAwareFill.h"; sourceTree = "<group>"; };
+		D23E6EF2189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIImageView_FaceAwareFill.m"; sourceTree = "<group>"; };
+		D23E6EF5189AD5910032209D /* TestBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBot.m; sourceTree = "<group>"; };
+		D2428469188486C500980E4E /* Roster App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Roster App.app"; path = "/Users/plenipotence/Dropbox/Laptop Files/Documents/CodeFellows/Assignments/1Roster App/build/Debug-iphoneos/Roster App.app"; sourceTree = "<absolute>"; };
 		D242846C188486C500980E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D242846E188486C500980E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D2428470188486C500980E4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -60,7 +60,7 @@
 		D2428481188486C500980E4E /* SSRosterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSRosterViewController.h; sourceTree = "<group>"; };
 		D2428482188486C500980E4E /* SSRosterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSRosterViewController.m; sourceTree = "<group>"; };
 		D2428484188486C500980E4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D242848A188486C500980E4E /* Roster AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roster AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D242848A188486C500980E4E /* Roster AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Roster AppTests.xctest"; path = "/Users/plenipotence/Dropbox/Laptop Files/Documents/CodeFellows/Assignments/1Roster App/build/Debug-iphoneos/Roster AppTests.xctest"; sourceTree = "<absolute>"; };
 		D242848B188486C500980E4E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D2428493188486C500980E4E /* Roster AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Roster AppTests-Info.plist"; sourceTree = "<group>"; };
 		D2428495188486C500980E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 				D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */,
 				D2428471188486C500980E4E /* UIKit.framework in Frameworks */,
 				D242846D188486C500980E4E /* Foundation.framework in Frameworks */,
-				82931749CAF243E5857FDA0C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,18 +109,8 @@
 				D2428472188486C500980E4E /* Roster App */,
 				D2428491188486C500980E4E /* Roster AppTests */,
 				D242846B188486C500980E4E /* Frameworks */,
-				D242846A188486C500980E4E /* Products */,
 				70995428ED394811ACBC63C1 /* Pods.xcconfig */,
 			);
-			sourceTree = "<group>";
-		};
-		D242846A188486C500980E4E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D2428469188486C500980E4E /* Roster App.app */,
-				D242848A188486C500980E4E /* Roster AppTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D242846B188486C500980E4E /* Frameworks */ = {
@@ -131,7 +120,6 @@
 				D242846E188486C500980E4E /* CoreGraphics.framework */,
 				D2428470188486C500980E4E /* UIKit.framework */,
 				D242848B188486C500980E4E /* XCTest.framework */,
-				C23AD66AD864442DA125BE07 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,6 +142,8 @@
 		D2428473188486C500980E4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D23E6EF1189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.h */,
+				D23E6EF2189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.m */,
 				D2428474188486C500980E4E /* Roster App-Info.plist */,
 				D2AEF5DD1885E0B70055AA5D /* Bootcamp.plist */,
 				D2428475188486C500980E4E /* InfoPlist.strings */,
@@ -166,7 +156,7 @@
 		D2428491188486C500980E4E /* Roster AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2373063189A24C4002503B5 /* BotTest.m */,
+				D23E6EF5189AD5910032209D /* TestBot.m */,
 				D2428492188486C500980E4E /* Supporting Files */,
 			);
 			path = "Roster AppTests";
@@ -278,7 +268,7 @@
 				Base,
 			);
 			mainGroup = D2428460188486C500980E4E;
-			productRefGroup = D242846A188486C500980E4E /* Products */;
+			productRefGroup = D2428460188486C500980E4E;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -316,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */,
-				D2373067189A24F9002503B5 /* BotTest.m in Sources */,
 				D2428483188486C500980E4E /* SSRosterViewController.m in Sources */,
 				D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */,
 				D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */,
@@ -324,6 +313,7 @@
 				D24284A31884873700980E4E /* SSDetailViewController.m in Sources */,
 				D2428479188486C500980E4E /* main.m in Sources */,
 				D2A86EF21888947D000D349A /* SSDetailScrollView.m in Sources */,
+				D23E6EF3189AD5490032209D /* UIImageView+UIImageView_FaceAwareFill.m in Sources */,
 				D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2373064189A24C4002503B5 /* BotTest.m in Sources */,
+				D23E6EF6189AD5910032209D /* TestBot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
