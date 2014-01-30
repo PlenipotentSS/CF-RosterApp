@@ -143,7 +143,6 @@
 				D242847E188486C500980E4E /* Main.storyboard */,
 				D2A86EA718884C6C000D349A /* Model */,
 				D2A86EA818884C74000D349A /* Controller */,
-				D2A86EA618884C5F000D349A /* Data */,
 				D25542D118899CA400345B38 /* Views */,
 				D2428484188486C500980E4E /* Images.xcassets */,
 				D2428473188486C500980E4E /* Supporting Files */,
@@ -190,22 +189,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		D2A86EA618884C5F000D349A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */,
-				D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */,
-				D2A86EAC188853A8000D349A /* SSDetailModelController.h */,
-				D2A86EAD188853A8000D349A /* SSDetailModelController.m */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		D2A86EA718884C6C000D349A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D2AEF5151884B9640055AA5D /* SSStudent.h */,
 				D2AEF5161884B9640055AA5D /* SSStudent.m */,
+				D2AEF5DA1885D1210055AA5D /* SSRosterModelController.h */,
+				D2AEF5DB1885D1210055AA5D /* SSRosterModelController.m */,
+				D2A86EAC188853A8000D349A /* SSDetailModelController.h */,
+				D2A86EAD188853A8000D349A /* SSDetailModelController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
