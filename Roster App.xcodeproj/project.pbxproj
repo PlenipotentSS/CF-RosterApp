@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		82931749CAF243E5857FDA0C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C23AD66AD864442DA125BE07 /* libPods.a */; };
+		D2373064189A24C4002503B5 /* BotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2373063189A24C4002503B5 /* BotTest.m */; };
+		D2373067189A24F9002503B5 /* BotTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2373063189A24C4002503B5 /* BotTest.m */; };
 		D242846D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
 		D242846F188486C500980E4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846E188486C500980E4E /* CoreGraphics.framework */; };
 		D2428471188486C500980E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
@@ -21,7 +23,6 @@
 		D242848D188486C500980E4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D242846C188486C500980E4E /* Foundation.framework */; };
 		D242848E188486C500980E4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2428470188486C500980E4E /* UIKit.framework */; };
 		D2428496188486C500980E4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2428494188486C500980E4E /* InfoPlist.strings */; };
-		D2428498188486C500980E4E /* Roster_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2428497188486C500980E4E /* Roster_AppTests.m */; };
 		D24284A31884873700980E4E /* SSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24284A21884873700980E4E /* SSDetailViewController.m */; };
 		D2A86EAB18884CDD000D349A /* SSRosterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAA18884CDD000D349A /* SSRosterTableViewCell.m */; };
 		D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A86EAD188853A8000D349A /* SSDetailModelController.m */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		70995428ED394811ACBC63C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C23AD66AD864442DA125BE07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2373063189A24C4002503B5 /* BotTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotTest.m; sourceTree = "<group>"; };
 		D2428469188486C500980E4E /* Roster App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roster App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D242846C188486C500980E4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D242846E188486C500980E4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +64,6 @@
 		D242848B188486C500980E4E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D2428493188486C500980E4E /* Roster AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Roster AppTests-Info.plist"; sourceTree = "<group>"; };
 		D2428495188486C500980E4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D2428497188486C500980E4E /* Roster_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roster_AppTests.m; sourceTree = "<group>"; };
 		D24284A11884873700980E4E /* SSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDetailViewController.h; sourceTree = "<group>"; };
 		D24284A21884873700980E4E /* SSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDetailViewController.m; sourceTree = "<group>"; };
 		D2A86EA918884CDD000D349A /* SSRosterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRosterTableViewCell.h; sourceTree = "<group>"; };
@@ -165,7 +166,7 @@
 		D2428491188486C500980E4E /* Roster AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2428497188486C500980E4E /* Roster_AppTests.m */,
+				D2373063189A24C4002503B5 /* BotTest.m */,
 				D2428492188486C500980E4E /* Supporting Files */,
 			);
 			path = "Roster AppTests";
@@ -315,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AEF5DC1885D1210055AA5D /* SSRosterModelController.m in Sources */,
+				D2373067189A24F9002503B5 /* BotTest.m in Sources */,
 				D2428483188486C500980E4E /* SSRosterViewController.m in Sources */,
 				D2A86EAE188853A8000D349A /* SSDetailModelController.m in Sources */,
 				D2AEF5171884B9640055AA5D /* SSStudent.m in Sources */,
@@ -330,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2428498188486C500980E4E /* Roster_AppTests.m in Sources */,
+				D2373064189A24C4002503B5 /* BotTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +478,7 @@
 		};
 		D242849F188486C500980E4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roster App.app/Roster App";
@@ -499,6 +502,7 @@
 		};
 		D24284A0188486C500980E4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70995428ED394811ACBC63C1 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roster App.app/Roster App";
